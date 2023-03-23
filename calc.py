@@ -3,8 +3,9 @@ import sys
 from expression import SExpressionEvaluator
 
 def main():
-    """Main function that reads an S-expression from the command line and evaluates it"""
-
+    """
+    Main function that reads an S-expression from the command line and evaluates it
+    """
     try:
         expression = SExpressionEvaluator(sys.argv[1])
         print(expression.evaluate())

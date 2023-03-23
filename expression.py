@@ -1,6 +1,9 @@
 from typing import List
 from functools import reduce
 
+# Threshold (Expression length) for deciding whether to use the recursive or memoized evaluation function
+INPUT_THRESHOLD = 15
+
 class SExpressionEvaluator:
     """
     Class for evaluating S-expressions
@@ -33,7 +36,7 @@ class SExpressionEvaluator:
         """
 
         # Decide whether to use the recursive or memoized evaluation function based on length
-        if len(self.expression) < 15:
+        if len(self.expression) < INPUT_THRESHOLD:
             return self._evaluate_recursive(self.expression)
         else:
             return self._evaluate_memoized(self.expression)
@@ -98,7 +101,9 @@ class SExpressionEvaluator:
         return int(expression)
 
     def _evaluate_single(self, expression: str) -> int:
-        """Evaluate a single sub-expression"""
+        """
+        Evaluate a single sub-expression
+        """
 
         # Ensure the provided sub-expression is a string
         if not isinstance(expression, str):
