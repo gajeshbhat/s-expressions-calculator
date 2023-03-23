@@ -47,10 +47,6 @@ class SExpressionEvaluator:
         if expression.isdigit():
             return int(expression)
 
-        # Check if this sub-expression has already been evaluated and return the result
-        #if expression in self.memoized_subexpressions:
-        #    return self.memoized_subexpressions[expression]
-
         # If the sub-expression is nested, recursively evaluate its sub-expressions
         if '(' not in expression:
             raise ValueError("Invalid expression: {}".format(expression))
@@ -67,7 +63,6 @@ class SExpressionEvaluator:
         result = self._evaluate_recursive(
             expression[:left_bound] + str(current_value) + expression[right_bound + 1:]
         )
-        #self.memoized_subexpressions[expression] = result
         return result
     
     def _evaluate_memoized(self, expression: str) -> int:
