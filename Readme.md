@@ -61,7 +61,7 @@ More details on the problem https://gist.github.com/rraval/2ef5e2ff228e022653db2
 
 2. To execute the test file run the following command  `python -m unittest test_expression.py`
 
-3. I could not get the time to write custom exceptions to the Value Errors raised and wrote a test anywway so that I can impelment it later.
+3. I could not get the time to write custom exceptions to the Value Errors raised and wrote a test anywway so that I can impelment it later. (1 test fails because of this!)
 
 ## Profiling
 1. I have added a profiling file `profile_expression.py` to profile the S-expression evaluation class.
